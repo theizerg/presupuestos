@@ -56,7 +56,6 @@
                     
                     <th>Cliente</th>
                     <th>Fecha de emisión</th>
-                    <th>Modelo de Vehículo</th>
                     <th>Estado del presupuesto</th> 
                     <th>Opciones</th> 
                     </tr>
@@ -67,19 +66,12 @@
                     
                     <td>{{ $presupuesto->nombre_cliente }}</td>
                     <td>{{ $presupuesto->fecha  }}</td>
-                    <td>{{ $presupuesto->marca_vehiculo  }}</td>
                     <td><span class="badge text-white {{ $presupuesto->status ? 'bg-green' : 'bg-red' }}">{{ $presupuesto->display_status }}</span></td>
                     <td>   
-                     @if (\App\Models\Presupuesto::where('status',1)->where('id',$presupuesto->id))
-                     <a class="btn btn-round blue darken-4" href="{{ url('ingreso', [$presupuesto->encode_id,'nuevo']) }}"><i class="mdi mdi-car-arrow-left" style="color: white;"></i> </a>
+                   
                      <a class="btn btn-round blue darken-4" href="{{ url('presupuestos', [$presupuesto->encode_id,'detalle']) }}"><i class="material-icons" style="color: white;">person</i> </a>
                      <a class="btn btn-round blue darken-4" href="{{ url('presupuestos', [$presupuesto->encode_id,'editar']) }}"><i class="material-icons" style="color: white;">edit</i> </a>   
-                     @else
-                    
-                     <a class="btn btn-round blue darken-4" href="{{ url('presupuestos', [$presupuesto->encode_id,'detalle']) }}"><i class="material-icons" style="color: white;">person</i> </a>
-                     <a class="btn btn-round blue darken-4" href="{{ url('presupuestos', [$presupuesto->encode_id,'editar']) }}"><i class="material-icons" style="color: white;">edit</i> </a>   
-                     @endif
-                     
+                                      
                                
                      
                        

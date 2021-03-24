@@ -70,19 +70,7 @@
 									<td>Teléfono</td>
 									   <td>{{ $presupuestos->cliente->telefono }}</td>
 								</tr>
-								<th class="text-center th-b" colspan="2">Información del vehículo</th>
-								<tr>
-									<td>Modelo del vehículo</td>
-									   <td>{{ $presupuestos->marca_vehiculo }}</td>
-								</tr>
-								<tr>
-									<td>Año del vehículo</td>
-									   <td>{{ $presupuestos->ano_vehiculo }}</td>
-								</tr>
-								<tr>
-									<td>Placa del vehículo</td>
-									   <td>{{ $presupuestos->placa_vehiculo }}</td>
-								</tr>
+								
 								</table>
 								<a href="/presupuestos/imprimir/{{$presupuestos->encode_id}}" target="_blank" class="btn btn-block btn-primary">
 								Imprimir

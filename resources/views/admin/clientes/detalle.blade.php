@@ -119,42 +119,7 @@
 												</td>												
 											</tr>
 										@endif
-										<tr>
-											<th class="text-center th-b" colspan="2">Información del vehículo</th>
-										</tr>
-										<tr>
-											<td>
-												Modelo de vehículo
-											</td>
-											<td>
-												{{$cliente->marca_vehiculo}}
-											</td>												
-										</tr>
-										<tr>
-											<td>
-												Año de vehículo
-											</td>
-											<td>
-												{{$cliente->ano_vehiculo}}
-											</td>												
-										</tr>
-										<tr>
-											<td>
-												Placa de vehículo
-											</td>
-											<td>
-												{{$cliente->placa_vehiculo}}
-											</td>												
-										</tr>
-										<tr>
-											<td>
-												Saldo
-											</td>
-											<td>
-												{{ App\Models\Moneda::find(config('app.monedaPreferida'))->first()->simbolo }}
-												{{ $cliente->getSaldo() }}
-											</td>
-										</tr>
+										
 									</table>
 								</div>								
 							</div><br>
@@ -166,10 +131,7 @@
 											<thead>
 												<tr>
 													<th class="text-center" width="120px">Fecha</th>
-													<th class="text-center" width="180px">Estado del presupuesto</th>
-													<th>Modelo de Vehículo</th>
-                   								    <th>Año del Vehículo</th>
-                                                    <th>Placa del Vehículo </th>
+													<th class="text-center" width="230px">Estado del presupuesto</th>
 													<th></th>
 												</tr>
 											</thead>
@@ -178,10 +140,6 @@
 													<tr>
 														<td>{{$c->fecha }}</td>
 														<td><span class="badge text-white text-capitalize text-center {{ $c->status ? 'bg-green' : 'bg-red' }}">{{ $c->display_status }}</span></td>
-														<td>{{ $c->marca_vehiculo  }}</td>
-                   									    <td>{{ $c->ano_vehiculo}} </td>
-                   									    <td>{{ $c->placa_vehiculo}} </td>
-														
 														<td class="text-center">
 															<a href="/presupuestos/{{$c->encode_id}}/detalle">
 																<i class="fas fa-external-link-alt"></i>

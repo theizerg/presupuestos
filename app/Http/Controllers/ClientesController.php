@@ -59,9 +59,6 @@ class ClientesController extends Controller
             $cliente->direccion = $request->direccion;
             $cliente->telefono = $request->telefono;
             $cliente->genero_id = $request->genero_id;
-            $cliente->marca_vehiculo = $request->marca_vehiculo;
-            $cliente->ano_vehiculo = $request->ano_vehiculo;
-            $cliente->placa_vehiculo = $request->placa_vehiculo;
             $cliente->save();
              $notification = array(
             'message' => '¡Datos ingresados!',
@@ -89,9 +86,6 @@ class ClientesController extends Controller
             $cliente->direccion = $request->direccion;          
             $cliente->telefono = $request->telefono;
             $cliente->genero_id = $request->genero_id;
-            $cliente->marca_vehiculo = $request->marca_vehiculo;
-            $cliente->ano_vehiculo = $request->ano_vehiculo;
-            $cliente->placa_vehiculo = $request->placa_vehiculo;
             $cliente->save();
            $notification = array(
             'message' => '¡Datos ingresados!',

@@ -125,14 +125,7 @@
                 </a>
               </li>
               @endcan
-              @can('VerDeducciones')
-              <li class="nav-item">
-                <a href="/ingreso" class="nav-link">
-                  <i class="mdi mdi-car-arrow-left nav-icon"></i>
-                  <p>Control de ingreso</p>
-                </a>
-              </li>
-              @endcan
+              
             </ul>
           </li>
           @endif  

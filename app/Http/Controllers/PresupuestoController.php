@@ -70,9 +70,9 @@ class PresupuestoController extends Controller
 
             $presupuesto->codigo = $request->codigo;       
             $presupuesto->fecha = $request->fecha;
-            $presupuesto->marca_vehiculo = $request->marca_vehiculo;
-            $presupuesto->ano_vehiculo = $request->ano_vehiculo;
-            $presupuesto->placa_vehiculo = $request->placa_vehiculo;
+            $presupuesto->marca_vehiculo = '0';
+            $presupuesto->ano_vehiculo = '0';
+            $presupuesto->placa_vehiculo = '0';
             $presupuesto->usuario_id = auth()->user()->id;
             $presupuesto->cliente_id =$request->cliente_id;
             $presupuesto->subtotal =0;
@@ -260,26 +260,6 @@ class PresupuestoController extends Controller
           $pdf->SetXY(90, 60);
           $pdf->Cell(110,5,utf8_decode($presupuesto->cliente->direccion),1,1,'C');
            //titulos encabezado
-          $pdf->SetXY(10, 65);
-          $pdf->SetFont('Arial','B',8);
-          $pdf->Cell(190,5,utf8_decode("DATOS DEL VEHÍCULO"),1,1,'C',true);
-           //titulos encabezado
-           $pdf->SetXY(10, 70);
-           $pdf->SetFont('Arial','B',6);
-           $pdf->Cell(80,5,utf8_decode("MODELO"),1,1,'L');
-           $pdf->SetXY(90, 70);
-           $pdf->Cell(30,5,utf8_decode("AÑO:"),1,1,'L');
-           $pdf->SetXY(120, 70);
-           $pdf->Cell(80,5,utf8_decode("PLACA:"),1,1,'L');
-            // datos del encabezado
-           $pdf->SetFont('Arial','',7);
-           $pdf->SetXY(10, 75);
-           $pdf->Cell(80,5,utf8_decode($presupuesto->cliente->marca_vehiculo),1,1,'C');
-           $pdf->SetXY(90, 75);
-           $pdf->Cell(30,5,utf8_decode($presupuesto->cliente->ano_vehiculo),1,1,'C');
-           $pdf->SetXY(120, 75);
-           $pdf->Cell(80,5,utf8_decode($presupuesto->cliente->placa_vehiculo),1,1,'C');
-
           $pdf->SetXY(10, 85);
           $pdf->SetFont('Arial','B',8);
           $pdf->Cell(190,5,utf8_decode("DATOS DEL PRESUPUESTO"),1,1,'C',true);
